@@ -11,7 +11,7 @@ public enum MessageCli {
   END("You closed the terminal. Goodbye."),
   INVALID_DIFFICULTY(
       "Error! Incorrect difficutly level. The possible difficulty leves are EASY,"
-          + " MEDIUM, H̉ARD, and MASTER"),
+          + " MEDIUM, HARD, and MASTER"),
   INVALID_NUMBER_OF_POINTS(
       "Error! Incorrect number of points. It should be a positive integer greater than zero"),
   ASK_INPUT("Give <fingers> <sum> and press enter"),
@@ -26,6 +26,7 @@ public enum MessageCli {
   PRINT_OUTCOME_ROUND("Result: %s"),
   PRINT_PLAYER_WINS("%s won %s rounds, %s more to win the game"),
   END_GAME("End game! %s won in %s rounds");
+
   private final String msg;
 
   private MessageCli(final String msg) {
