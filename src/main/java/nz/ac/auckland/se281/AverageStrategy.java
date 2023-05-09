@@ -4,12 +4,17 @@
 
 package nz.ac.auckland.se281;
 
+import java.lang.Math;
+
 public class AverageStrategy implements Strategy {
+
+    private int[] fingersAndSum = new int[2];
 
     @Override
     public int[] decideStrategy() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'decideStrategy'");
+        fingersAndSum[0] = Utils.getRandomNumber(1, 5);
+
+        return fingersAndSum;
     }
 
 }

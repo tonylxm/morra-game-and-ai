@@ -13,8 +13,6 @@ public class Morra {
 
   private String playerName;
   private int roundNum = 0;
-  private List<Integer> humanFingerHistory = new ArrayList<Integer>();
-  private List<Integer> humanSumHistory = new ArrayList<Integer>();
 
   public Morra() {
   }
@@ -33,11 +31,13 @@ public class Morra {
     if (roundNum == 0) {
       MessageCli.GAME_NOT_STARTED.printMessage();
     } else {
+      List<Integer> humanFingerHistory = new ArrayList<Integer>();
+
       // Specify which round of play
       MessageCli.START_ROUND.printMessage(String.valueOf(roundNum));
       roundNum += 1;
 
-      CPU cpu = new CPU(new EasyStrategy());
+      CPU cpu = new CPU(new RandomStrategy());
       Human player = new Human(playerName);
 
       int[] choicesHuman = player.play();
@@ -45,7 +45,6 @@ public class Morra {
 
       // Calculate and display outcome
       humanFingerHistory.add(choicesHuman[0]);
-      humanSumHistory.add(choicesHuman[1]);
       int res = calculateResult(choicesHuman, choicesCPU);
 
     }
@@ -55,9 +54,9 @@ public class Morra {
   }
 
   private int calculateResult(int[] human, int[] cpu) {
-    // human wins = 0
-    // cpu wins = 1
-    // draw = 2
+    // HUMAN_WINS = 0
+    // CPU_WINS = 1
+    // DRAW = 2
 
     int totalSum = human[0] + cpu[0];
 
