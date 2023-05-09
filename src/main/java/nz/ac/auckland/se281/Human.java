@@ -6,14 +6,13 @@ package nz.ac.auckland.se281;
 
 public class Human {
     private String playerName;
-    private int fingers;
-    private int sum;
+    private int[] fingersAndSum = new int[2]; // index 0 = fingers, index 1 = sum
 
     public Human(String playerName) {
         this.playerName = playerName;
     }
 
-    public void play() {
+    public int[] play() {
         MessageCli.ASK_INPUT.printMessage();
         String input = Utils.scanner.nextLine();
         String[] split = input.split(" ");
@@ -24,7 +23,9 @@ public class Human {
             input = Utils.scanner.nextLine();
             split = input.split(" ");
         }
-        MessageCli.PRINT_INFO_HAND.printMessage(playerName, String.valueOf(fingers), String.valueOf(sum));
+        MessageCli.PRINT_INFO_HAND.printMessage(playerName, String.valueOf(fingersAndSum[0]),
+                String.valueOf(fingersAndSum[1]));
+        return fingersAndSum;
     }
 
     public boolean isInputValid(String[] split) {
@@ -39,10 +40,10 @@ public class Human {
                 return false;
             }
 
-            fingers = Integer.parseInt(split[0]);
-            sum = Integer.parseInt(split[1]);
+            fingersAndSum[0] = Integer.parseInt(split[0]); // fingers
+            fingersAndSum[1] = Integer.parseInt(split[1]); // sum
 
-            if ((fingers >= 1 && fingers <= 5) && (sum >= 1 && sum <= 10)) {
+            if ((fingersAndSum[0] >= 1 && fingersAndSum[0] <= 5) && (fingersAndSum[1] >= 1 && fingersAndSum[1] <= 10)) {
                 // inputs are valid
                 return true;
             } else {

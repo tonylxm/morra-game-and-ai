@@ -7,12 +7,15 @@ package nz.ac.auckland.se281;
 public class EasyStrategy implements Strategy {
     // RANDOM STRATEGY
 
-    private int fingers = Utils.getRandomNumber(1, 5);
-    private int sum = Utils.getRandomNumber(fingers + 1, fingers + 5);
+    private int[] fingersAndSum = new int[2];
 
     @Override
-    public void decideStrategy() {
-        MessageCli.PRINT_INFO_HAND.printMessage("Jarvis", String.valueOf(fingers), String.valueOf(sum));
+    public int[] decideStrategy() {
+        fingersAndSum[0] = Utils.getRandomNumber(1, 5);
+        fingersAndSum[1] = Utils.getRandomNumber(fingersAndSum[0] + 1, fingersAndSum[0] + 5);
+        MessageCli.PRINT_INFO_HAND.printMessage("Jarvis", String.valueOf(fingersAndSum[0]),
+                String.valueOf(fingersAndSum[1]));
+        return fingersAndSum;
     }
 
 }

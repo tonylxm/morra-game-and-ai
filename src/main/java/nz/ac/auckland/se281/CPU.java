@@ -15,8 +15,8 @@ public class CPU {
         this.strategy = strategy;
     }
 
-    public void play() {
-        strategy.decideStrategy();
+    public int[] play() {
+        return strategy.decideStrategy();
     }
 
 }
