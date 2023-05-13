@@ -13,6 +13,8 @@ public class Morra {
 
   private String playerName;
   private int roundNum = 0;
+  private Difficulty level;
+  private List<Integer> fingerHistory;
 
   public Morra() {
   }
@@ -22,6 +24,8 @@ public class Morra {
     MessageCli.WELCOME_PLAYER.printMessage(playerName);
     // Keep track of number of rounds in this game
     roundNum = 1;
+    level = difficulty;
+    fingerHistory = new ArrayList<Integer>();
   }
 
   // Main game loop
@@ -31,22 +35,23 @@ public class Morra {
     if (roundNum == 0) {
       MessageCli.GAME_NOT_STARTED.printMessage();
     } else {
-      List<Integer> humanFingerHistory = new ArrayList<Integer>();
 
       // Specify which round of play
       MessageCli.START_ROUND.printMessage(String.valueOf(roundNum));
-      roundNum += 1;
 
-      CPU cpu = new CPU(new RandomStrategy());
+      // Instantiate AI and Human
+      Ai ai = AiFactory.createAi(level);
       Human player = new Human(playerName);
 
+      // Player and AI play the game and save both answers as respective variables
       int[] choicesHuman = player.play();
-      int[] choicesCPU = cpu.play();
+      int[] choicesAi = ai.play(roundNum, fingerHistory);
 
       // Calculate and display outcome
-      humanFingerHistory.add(choicesHuman[0]);
-      int res = calculateResult(choicesHuman, choicesCPU);
+      fingerHistory.add(choicesHuman[0]);
+      int result = calculateResult(choicesHuman, choicesAi);
 
+      roundNum += 1;
     }
   }
 
@@ -70,6 +75,5 @@ public class Morra {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage("DRAW");
       return 2;
     }
-
   }
 }

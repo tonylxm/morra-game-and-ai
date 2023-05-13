@@ -16,8 +16,8 @@ public class CPU {
         this.strategy = strategy;
     }
 
-    public int[] play() {
-        return strategy.decideStrategy();
+    public int[] process() {
+        return strategy.decideFingerAndSum();
     }
 
 }

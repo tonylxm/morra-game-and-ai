@@ -4,10 +4,10 @@
 
 package nz.ac.auckland.se281;
 
-public class TopStrategy implements Strategy {
+public class TopStrategy extends Strategy {
 
     @Override
-    public int[] decideStrategy() {
+    public int[] decideFingerAndSum() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'decideStrategy'");
     }

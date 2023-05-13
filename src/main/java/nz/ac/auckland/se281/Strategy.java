@@ -4,6 +4,10 @@
 
 package nz.ac.auckland.se281;
 
-public interface Strategy {
-    public int[] decideStrategy();
+public abstract class Strategy {
+    protected int[] fingersAndSum = new int[2];
+
+    public int[] decideFingerAndSum() {
+        return null;
+    }
 }
