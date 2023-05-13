@@ -1,12 +1,11 @@
 // AUTHOR: Tony Lim
 // DATE CREATED: 04/05/2023
-// DATE LAST EDITED: 04/05/2023
+// DATE LAST EDITED: 13/05/2023
 
 package nz.ac.auckland.se281;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import nz.ac.auckland.se281.Main.Difficulty;
 
 public class Morra {
@@ -16,8 +15,7 @@ public class Morra {
   private Difficulty level;
   private List<Integer> fingerHistory;
 
-  public Morra() {
-  }
+  public Morra() {}
 
   public void newGame(Difficulty difficulty, int pointsToWin, String[] options) {
     playerName = options[0];
@@ -55,8 +53,7 @@ public class Morra {
     }
   }
 
-  public void showStats() {
-  }
+  public void showStats() {}
 
   private int calculateResult(int[] human, int[] cpu) {
     // HUMAN_WINS = 0

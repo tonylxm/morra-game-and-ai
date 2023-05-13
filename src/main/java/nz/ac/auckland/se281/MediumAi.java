@@ -8,16 +8,14 @@ import java.util.List;
 
 public class MediumAi implements Ai {
 
-    @Override
-    public int[] play(int roundNum, List<Integer> fingerHistory) {
-        CPU cpu = new CPU(new RandomStrategy());
-        if (roundNum <= 3) {
-            return cpu.process();
-        } else {
-            cpu.setStrategy(new AverageStrategy(fingerHistory));
-            return cpu.process();
-        }
-
+  @Override
+  public int[] play(int roundNum, List<Integer> fingerHistory) {
+    CPU cpu = new CPU(new RandomStrategy());
+    if (roundNum <= 3) {
+      return cpu.process();
+    } else {
+      cpu.setStrategy(new AverageStrategy(fingerHistory));
+      return cpu.process();
     }
-
+  }
 }
