@@ -16,9 +16,9 @@ public class AiFactory {
       case HARD:
         return new HardAi();
       case MASTER:
-        // return new MasterAi();
+        return new MasterAi();
       default:
-        // error
+        // error (should never happen)
         return null;
     }
   }
