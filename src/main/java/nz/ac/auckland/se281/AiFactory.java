@@ -14,7 +14,7 @@ public class AiFactory {
       case MEDIUM:
         return new MediumAi();
       case HARD:
-        // return new HardAi();
+        return new HardAi();
       case MASTER:
         // return new MasterAi();
       default:

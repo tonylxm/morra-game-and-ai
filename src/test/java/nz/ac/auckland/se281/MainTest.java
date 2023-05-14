@@ -15,13 +15,13 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-    MainTest.Task1.class, //
-    MainTest.Task2.class, // Uncomment this line when to start Task 2
-    MainTest.Task3.class, // Uncomment this line when to start Task 3
-// MainTest.Task4.class, // Uncomment this line when to start Task 4
-// MainTest.Task5.class, // Uncomment this line when to start Task 5
-// MainTest.Task6.class, // Uncomment this line when to start Task 5
-// MainTest.YourTests.class, // Uncomment this line to run your own tests
+  MainTest.Task1.class, //
+  MainTest.Task2.class, // Uncomment this line when to start Task 2
+  MainTest.Task3.class, // Uncomment this line when to start Task 3
+  MainTest.Task4.class, // Uncomment this line when to start Task 4
+  // MainTest.Task5.class, // Uncomment this line when to start Task 5
+  // MainTest.Task6.class, // Uncomment this line when to start Task 5
+  // MainTest.YourTests.class, // Uncomment this line to run your own tests
 })
 public class MainTest {
 
@@ -41,9 +41,10 @@ public class MainTest {
 
     try {
 
-      String roundOut = output
-          .split(START_ROUND.getMessage(String.valueOf(round)))[1]
-          .split("Player " + player + ": fingers")[1];
+      String roundOut =
+          output
+              .split(START_ROUND.getMessage(String.valueOf(round)))[1]
+              .split("Player " + player + ": fingers")[1];
       Pattern pattern = Pattern.compile("-?\\d+");
       Matcher matcher = pattern.matcher(roundOut);
       matcher.find();
@@ -221,7 +222,6 @@ public class MainTest {
       assertEquals(1, res[0]);
       assertEquals(4, res[1]);
     }
-
   }
 
   public static class Task2 extends CliTest {
@@ -351,7 +351,6 @@ public class MainTest {
       assertEquals(5, sumJarvis);
       assertContains(PRINT_OUTCOME_ROUND.getMessage("DRAW"));
     }
-
   }
 
   public static class Task3 extends CliTest {
@@ -422,8 +421,12 @@ public class MainTest {
       int sumJarvis = res[1];
       assertEquals(3, fingersJarvis);
       assertEquals(7, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(2, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
-      assertFalse(MainTest.getOutputByRound(2, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
+      assertTrue(
+          MainTest.getOutputByRound(2, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
+      assertFalse(
+          MainTest.getOutputByRound(2, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
     }
 
     @Test
@@ -452,8 +455,9 @@ public class MainTest {
       int sumJarvis = res[1];
       assertEquals(5, fingersJarvis);
       assertEquals(10, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(3, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
-
+      assertTrue(
+          MainTest.getOutputByRound(3, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
     }
 
     @Test
@@ -497,8 +501,9 @@ public class MainTest {
       // + 2
       assertEquals(5, fingersJarvis);
       assertEquals(7, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(4, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
-
+      assertTrue(
+          MainTest.getOutputByRound(4, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
     }
 
     @Test
@@ -546,10 +551,10 @@ public class MainTest {
       // + 2
       assertEquals(2, fingersJarvis);
       assertEquals(4, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(5, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
-
+      assertTrue(
+          MainTest.getOutputByRound(5, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
     }
-
   }
 
   public static class Task4 extends CliTest {
@@ -595,8 +600,9 @@ public class MainTest {
       int sumJarvis = res[1];
       assertEquals(1, fingersJarvis);
       assertEquals(5, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(1, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
-
+      assertTrue(
+          MainTest.getOutputByRound(1, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
     }
 
     @Test
@@ -622,8 +628,9 @@ public class MainTest {
       int sumJarvis = res[1];
       assertEquals(3, fingersJarvis);
       assertEquals(7, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(2, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
-
+      assertTrue(
+          MainTest.getOutputByRound(2, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
     }
 
     @Test
@@ -652,8 +659,9 @@ public class MainTest {
       int sumJarvis = res[1];
       assertEquals(5, fingersJarvis);
       assertEquals(10, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(3, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
-
+      assertTrue(
+          MainTest.getOutputByRound(3, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
     }
 
     @Test
@@ -734,10 +742,10 @@ public class MainTest {
       // + 1
       assertEquals(2, fingersJarvis);
       assertEquals(3, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(5, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
-
+      assertTrue(
+          MainTest.getOutputByRound(5, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
     }
-
   }
 
   public static class Task5 extends CliTest {
@@ -783,8 +791,9 @@ public class MainTest {
       int sumJarvis = res[1];
       assertEquals(1, fingersJarvis);
       assertEquals(5, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(1, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
-
+      assertTrue(
+          MainTest.getOutputByRound(1, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
     }
 
     @Test
@@ -810,8 +819,9 @@ public class MainTest {
       int sumJarvis = res[1];
       assertEquals(3, fingersJarvis);
       assertEquals(7, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(2, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
-
+      assertTrue(
+          MainTest.getOutputByRound(2, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
     }
 
     @Test
@@ -840,9 +850,12 @@ public class MainTest {
       int sumJarvis = res[1];
       assertEquals(5, fingersJarvis);
       assertEquals(10, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(3, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
-      assertFalse(MainTest.getOutputByRound(3, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
-
+      assertTrue(
+          MainTest.getOutputByRound(3, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
+      assertFalse(
+          MainTest.getOutputByRound(3, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
     }
 
     @Test
@@ -885,8 +898,9 @@ public class MainTest {
       // + 2
       assertEquals(2, fingersJarvis);
       assertEquals(4, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(4, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
-
+      assertTrue(
+          MainTest.getOutputByRound(4, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
     }
 
     @Test
@@ -929,10 +943,10 @@ public class MainTest {
       // + 2
       assertEquals(2, fingersJarvis);
       assertEquals(4, sumJarvis);
-      assertTrue(MainTest.getOutputByRound(5, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
-
+      assertTrue(
+          MainTest.getOutputByRound(5, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
     }
-
   }
 
   public static class Task6 extends CliTest {
@@ -943,8 +957,7 @@ public class MainTest {
 
     @Test
     public void T6_01_play_before_start() throws Exception {
-      runCommands(
-          PLAY);
+      runCommands(PLAY);
       assertContains(MessageCli.GAME_NOT_STARTED.getMessage());
     }
 
@@ -956,7 +969,8 @@ public class MainTest {
           "Valerio",
           //
           PLAY,
-          "4 3", NEW_GAME + " EASY 3",
+          "4 3",
+          NEW_GAME + " EASY 3",
           "Valerio",
           //
           PLAY,
@@ -965,7 +979,6 @@ public class MainTest {
       assertContains(START_ROUND.getMessage("1"));
       assertDoesNotContain(START_ROUND.getMessage("2"));
       assertDoesNotContain(MessageCli.GAME_NOT_STARTED.getMessage());
-
     }
 
     @Test
@@ -979,7 +992,9 @@ public class MainTest {
           "1 2");
       assertContains(START_ROUND.getMessage("1"));
       assertContains(ASK_INPUT.getMessage());
-      assertTrue(MainTest.getOutputByRound(1, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
+      assertTrue(
+          MainTest.getOutputByRound(1, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
       assertContains(END_GAME.getMessage("Valerio", "1"));
     }
 
@@ -994,7 +1009,9 @@ public class MainTest {
           "4 3");
       assertContains(START_ROUND.getMessage("1"));
       assertContains(ASK_INPUT.getMessage());
-      assertTrue(MainTest.getOutputByRound(1, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
+      assertTrue(
+          MainTest.getOutputByRound(1, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("AI_WINS")));
       assertDoesNotContain(END_GAME.getMessage("Valerio", "1"));
       assertContains(END_GAME.getMessage("Jarvis", "1"));
     }
@@ -1009,16 +1026,21 @@ public class MainTest {
           PLAY,
           "3 3"
           //
-          , PLAY, "1 4");
+          ,
+          PLAY,
+          "1 4");
       assertContains(START_ROUND.getMessage("1"));
       assertContains(ASK_INPUT.getMessage());
-      assertTrue(MainTest.getOutputByRound(1, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
+      assertTrue(
+          MainTest.getOutputByRound(1, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("DRAW")));
       assertDoesNotContain(END_GAME.getMessage("Valerio", "1"));
       assertDoesNotContain(END_GAME.getMessage("Jarvis", "1"));
-      assertTrue(MainTest.getOutputByRound(2, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
+      assertTrue(
+          MainTest.getOutputByRound(2, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
       assertContains(END_GAME.getMessage("Valerio", "2"));
       assertDoesNotContain(END_GAME.getMessage("Jarvis", "2"));
-
     }
 
     @Test
@@ -1031,23 +1053,27 @@ public class MainTest {
           PLAY,
           "1 2"
           //
-          , PLAY, "1 4");
+          ,
+          PLAY,
+          "1 4");
       assertContains(START_ROUND.getMessage("1"));
       assertContains(ASK_INPUT.getMessage());
-      assertTrue(MainTest.getOutputByRound(1, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
+      assertTrue(
+          MainTest.getOutputByRound(1, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
       assertDoesNotContain(END_GAME.getMessage("Valerio", "1"));
       assertDoesNotContain(END_GAME.getMessage("Jarvis", "1"));
-      assertTrue(MainTest.getOutputByRound(2, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
+      assertTrue(
+          MainTest.getOutputByRound(2, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
       assertContains(END_GAME.getMessage("Valerio", "2"));
       assertDoesNotContain(END_GAME.getMessage("Jarvis", "2"));
-
     }
 
     @Test
     public void T6_07_show_stats_fail() throws Exception {
       Utils.random = new java.util.Random(1);
-      runCommands(
-          SHOW_STATS);
+      runCommands(SHOW_STATS);
       assertContains(GAME_NOT_STARTED.getMessage());
     }
 
@@ -1059,25 +1085,32 @@ public class MainTest {
           "Valerio",
           //
           PLAY,
-          "1 2", SHOW_STATS
+          "1 2",
+          SHOW_STATS
           //
-          , PLAY, "1 4", SHOW_STATS);
+          ,
+          PLAY,
+          "1 4",
+          SHOW_STATS);
       assertContains(START_ROUND.getMessage("1"));
       assertContains(ASK_INPUT.getMessage());
-      assertTrue(MainTest.getOutputByRound(1, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
+      assertTrue(
+          MainTest.getOutputByRound(1, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
       assertDoesNotContain(END_GAME.getMessage("Valerio", "1"));
       assertDoesNotContain(END_GAME.getMessage("Jarvis", "1"));
       assertContains(PRINT_PLAYER_WINS.getMessage("Valerio", "1", "1"));
       assertContains(PRINT_PLAYER_WINS.getMessage("Jarvis", "0", "2"));
       assertDoesNotContain(PRINT_PLAYER_WINS.getMessage("Valerio", "0", "0"));
       // SECOND ROUND
-      assertTrue(MainTest.getOutputByRound(2, getOutput()).contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
+      assertTrue(
+          MainTest.getOutputByRound(2, getOutput())
+              .contains(PRINT_OUTCOME_ROUND.getMessage("HUMAN_WINS")));
       assertContains(END_GAME.getMessage("Valerio", "2"));
       assertDoesNotContain(END_GAME.getMessage("Jarvis", "2"));
       // GAME ENDS
       assertContains(GAME_NOT_STARTED.getMessage());
     }
-
   }
 
   public static class YourTests extends CliTest {
@@ -1093,5 +1126,4 @@ public class MainTest {
       assertContains("[2 arguments]");
     }
   }
-
 }

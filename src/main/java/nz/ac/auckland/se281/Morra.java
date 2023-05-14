@@ -62,7 +62,11 @@ public class Morra {
 
     int totalSum = human[0] + cpu[0];
 
-    if (totalSum == human[1]) {
+    // If both guess correctly or no one guesses correctly, then it is a DRAW
+    if (totalSum == human[1] && totalSum == cpu[1]) {
+      MessageCli.PRINT_OUTCOME_ROUND.printMessage("DRAW");
+      return 2;
+    } else if (totalSum == human[1]) {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage("HUMAN_WINS");
       return 0;
     } else if (totalSum == cpu[1]) {
