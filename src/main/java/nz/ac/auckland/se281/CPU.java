@@ -4,10 +4,11 @@
 
 package nz.ac.auckland.se281;
 
+// 'Brains' behind the AI - processes all the commands of the respective strategy based on which AI
+// calls it
 public class CPU {
   private Strategy strategy;
 
-  // Use Factory design pattern to implement EASY, MEDIUM, HARD instances of CPU
   public CPU(Strategy strategy) {
     this.strategy = strategy;
   }
@@ -17,6 +18,8 @@ public class CPU {
   }
 
   public int[] process() {
-    return strategy.decideFingerAndSum();
+    strategy.calculateSum();
+    strategy.printInfoHand();
+    return strategy.getFingersAndSum();
   }
 }

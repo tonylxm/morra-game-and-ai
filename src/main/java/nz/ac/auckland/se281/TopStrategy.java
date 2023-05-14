@@ -4,11 +4,15 @@
 
 package nz.ac.auckland.se281;
 
+import java.util.List;
+
 public class TopStrategy extends Strategy {
 
-  @Override
-  public int[] decideFingerAndSum() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'decideStrategy'");
+  public TopStrategy(List<Integer> fingerHistory) {
+    super(fingerHistory);
   }
+
+  // not complete
+  @Override
+  public void calculateSum() {}
 }
