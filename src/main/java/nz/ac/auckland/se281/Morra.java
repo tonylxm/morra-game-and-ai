@@ -64,6 +64,7 @@ public class Morra {
   }
 
   public void showStats() {
+    // Only show stats if a game is currently being played
     if (roundNum == 0) {
       MessageCli.GAME_NOT_STARTED.printMessage();
     } else {

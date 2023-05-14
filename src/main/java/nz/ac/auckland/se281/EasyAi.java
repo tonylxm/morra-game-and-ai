@@ -10,7 +10,7 @@ public class EasyAi implements Ai {
 
   @Override
   public int[] play(int roundNum, List<Integer> fingerHistory) {
-    CPU cpu = new CPU(new RandomStrategy());
+    Cpu cpu = new Cpu(new RandomStrategy()); // EasyAi only uses a Random Strategy
     return cpu.process();
   }
 }

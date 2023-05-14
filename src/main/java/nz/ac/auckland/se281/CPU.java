@@ -6,10 +6,10 @@ package nz.ac.auckland.se281;
 
 // 'Brains' behind the AI - processes all the commands of the respective strategy based on which AI
 // calls it
-public class CPU {
+public class Cpu {
   private Strategy strategy;
 
-  public CPU(Strategy strategy) {
+  public Cpu(Strategy strategy) {
     this.strategy = strategy;
   }
 
