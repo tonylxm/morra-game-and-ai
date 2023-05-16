@@ -21,6 +21,7 @@ public class AverageStrategy extends Strategy {
       avg += fingerHistory.get(i);
     }
 
+    // AI sum = Average human finger inputs (rounded) + AI chosen random finger
     avg = avg / i;
     fingersAndSum[1] = fingersAndSum[0] + (int) Math.round(avg);
   }
