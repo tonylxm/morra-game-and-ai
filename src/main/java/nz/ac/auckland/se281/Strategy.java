@@ -16,7 +16,7 @@ public abstract class Strategy {
     fingersAndSum[0] = Utils.getRandomNumber(1, 5);
   }
 
-  // Constructor for Average and Top Strategies that need fingerHistory data
+  // Constructor for Average and Top Strategies that require fingerHistory data
   public Strategy(List<Integer> fingerHistory) {
     fingersAndSum[0] = Utils.getRandomNumber(1, 5);
     this.fingerHistory = fingerHistory;

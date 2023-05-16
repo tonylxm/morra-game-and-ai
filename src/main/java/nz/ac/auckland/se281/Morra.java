@@ -53,8 +53,10 @@ public class Morra {
       int[] choicesHuman = player.play();
       int[] choicesAi = ai.play(roundNum, fingerHistory);
 
-      // Calculate and display results of round
+      // Add human choices to a history list for harder AI levels to utilise
       fingerHistory.add(choicesHuman[0]);
+
+      // Calculate and display results of round
       calculateResult(choicesHuman, choicesAi);
 
       // After the current round of play is over, check if there is a winner
