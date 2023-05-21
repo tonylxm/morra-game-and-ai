@@ -7,8 +7,8 @@ package nz.ac.auckland.se281;
 import java.util.List;
 
 public abstract class Ai {
-  int roundNum;
-  List<Integer> fingerHistory;
+  protected int roundNum;
+  protected List<Integer> fingerHistory;
 
   // Constructor for EasyAi
   public Ai(int roundNum) {
