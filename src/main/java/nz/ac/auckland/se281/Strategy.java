@@ -11,7 +11,7 @@ public abstract class Strategy {
   protected int[] fingersAndSum = new int[2];
   protected List<Integer> fingerHistory;
 
-  // Constructor for RandomStrategy
+  // Constructor for Random Strategy
   public Strategy() {
     fingersAndSum[0] = Utils.getRandomNumber(1, 5);
   }

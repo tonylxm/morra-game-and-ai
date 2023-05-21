@@ -1,6 +1,6 @@
 // AUTHOR: Tony Lim
 // DATE CREATED: 04/05/2023
-// DATE LAST EDITED: 17/05/2023
+// DATE LAST EDITED: 21/05/2023
 
 package nz.ac.auckland.se281;
 
@@ -46,12 +46,12 @@ public class Morra {
       MessageCli.START_ROUND.printMessage(String.valueOf(roundNum));
 
       // Instantiate AI and Human
-      Ai ai = AiFactory.createAi(level);
+      Ai ai = AiFactory.createAi(level, roundNum, fingerHistory);
       Human player = new Human(playerName);
 
       // Player and AI play the game and save both answers as respective variables
       int[] choicesHuman = player.play();
-      int[] choicesAi = ai.play(roundNum, fingerHistory);
+      int[] choicesAi = ai.play();
 
       // Add human choices to a history list for harder AI levels to utilise
       fingerHistory.add(choicesHuman[0]);

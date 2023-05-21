@@ -1,17 +1,21 @@
 // AUTHOR: Tony Lim
 // DATE CREATED: 14/05/2023
-// DATE LAST EDITED: 14/05/2023
+// DATE LAST EDITED: 21/05/2023
 
 package nz.ac.auckland.se281;
 
 import java.util.List;
 
-public class MasterAi implements Ai {
+public class MasterAi extends Ai {
+
+  public MasterAi(int roundNum, List<Integer> fingerHistory) {
+    super(roundNum, fingerHistory);
+  }
 
   @Override
-  public int[] play(int roundNum, List<Integer> fingerHistory) {
+  public int[] play() {
     Cpu cpu = new Cpu(null);
-    // For the first 3 round, use RandomStrategy
+    // For the first 3 round, use default RandomStrategy
     if (roundNum <= 3) {
       cpu.setStrategy(new RandomStrategy());
       return cpu.process();
